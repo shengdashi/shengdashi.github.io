@@ -21,11 +21,11 @@
   </script>
 
   <meta property="og:type" content="website">
-<meta property="og:title" content="圣达什">
+<meta property="og:title" content="圣大什的小博客">
 <meta property="og:url" content="http://shengdashi.com/index.html">
-<meta property="og:site_name" content="圣达什">
+<meta property="og:site_name" content="圣大什的小博客">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="圣达什">
+<meta property="article:author" content="圣大什">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://shengdashi.com/">
@@ -41,7 +41,7 @@
   };
 </script>
 
-  <title>圣达什</title>
+  <title>圣大什的小博客</title>
   
 
 
@@ -92,7 +92,7 @@
 
     <a href="/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
-      <h1 class="site-title">圣达什</h1>
+      <h1 class="site-title">圣大什的小博客</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
   </div>
@@ -128,16 +128,6 @@
     <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
-
-  </li>
-        <li class="menu-item menu-item-schedule">
-
-    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
-
-  </li>
         <li class="menu-item menu-item-sitemap">
 
     <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
@@ -162,6 +152,7 @@
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
+  <div class="reading-progress-bar"></div>
 
 
     <main class="main">
@@ -175,21 +166,21 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://shengdashi.com/2020/04/12/%E5%B0%8F%E5%AE%9D%E8%B4%9D/">
+    <link itemprop="mainEntityOfPage" href="http://shengdashi.com/2020/04/13/DAO,Service,Controller/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/26.jpg">
-      <meta itemprop="name" content="圣达什">
+      <meta itemprop="name" content="圣大什">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="圣达什">
+      <meta itemprop="name" content="圣大什的小博客">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/12/%E5%B0%8F%E5%AE%9D%E8%B4%9D/" class="post-title-link" itemprop="url">小宝贝</a>
+            <a href="/2020/04/13/DAO,Service,Controller/" class="post-title-link" itemprop="url">DAO,Service,Controller各层之间的关系</a>
         </h2>
 
         <div class="post-meta">
@@ -199,14 +190,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-04-12 14:26:16" itemprop="dateCreated datePublished" datetime="2020-04-12T14:26:16+08:00">2020-04-12</time>
+              <time title="创建时间：2020-04-13 14:29:15" itemprop="dateCreated datePublished" datetime="2020-04-13T14:29:15+08:00">2020-04-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-18 23:25:20" itemprop="dateModified" datetime="2020-04-18T23:25:20+08:00">2020-04-18</time>
+                <time title="修改时间：2020-04-20 11:31:48" itemprop="dateModified" datetime="2020-04-20T11:31:48+08:00">2020-04-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -214,7 +205,7 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%B0%8F%E5%AE%9D%E8%B4%9D/" itemprop="url" rel="index"><span itemprop="name">小宝贝</span></a>
+                  <a href="/categories/%E5%AD%A6%E4%B9%A0Java/" itemprop="url" rel="index"><span itemprop="name">学习Java</span></a>
                 </span>
             </span>
 
@@ -229,9 +220,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="小猪猪"><a href="#小猪猪" class="headerlink" title="小猪猪"></a>小猪猪</h1><h3 id="我爱你小宝贝"><a href="#我爱你小宝贝" class="headerlink" title="我爱你小宝贝"></a>我爱你小宝贝</h3><hr>
-<p><img src="/images/01.jpg" alt="小宝贝"></p>
-
+          <h3 id="DAO层"><a href="#DAO层" class="headerlink" title="DAO层"></a>DAO层</h3><pre><code>   DAO层主要是做数据持久层的工作，负责与数据库进行联络的一些任务都封装在这。
+   DAO层的设计首先是设计DAO的接口，然后在Spring的配置文件中定义此接口的实现类，就可以在模块中调用此接口进行数
+据业务处理，不用关心此接口的具体实现类是哪个类。
+   DAO层的数据源配置，数据库连接参数都在spring配置文件中配置</code></pre><h3 id="Service层"><a href="#Service层" class="headerlink" title="Service层"></a>Service层</h3><pre><code>Service层主要负责业务模块的逻辑应用设计。</code></pre><h3 id="Controller层"><a href="#Controller层" class="headerlink" title="Controller层"></a>Controller层</h3><pre><code>Controller层负责具体的业务模块流程的控制</code></pre><h3 id="View层"><a href="#View层" class="headerlink" title="View层"></a>View层</h3><pre><code>此层与Controller层结合,View层主要负责前台jsp页面的表示。</code></pre>
       
     </div>
 
@@ -250,21 +242,21 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://shengdashi.com/2020/04/07/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://shengdashi.com/2020/04/12/%E5%8F%A4%E8%A3%85%E5%B0%8F%E5%AE%9D%E8%B4%9D%E6%9D%A5%E4%B8%80%E5%BC%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/26.jpg">
-      <meta itemprop="name" content="圣达什">
+      <meta itemprop="name" content="圣大什">
       <meta itemprop="description" content="">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="圣达什">
+      <meta itemprop="name" content="圣大什的小博客">
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/04/07/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2020/04/12/%E5%8F%A4%E8%A3%85%E5%B0%8F%E5%AE%9D%E8%B4%9D%E6%9D%A5%E4%B8%80%E5%BC%A0/" class="post-title-link" itemprop="url">古装小宝贝来一张</a>
         </h2>
 
         <div class="post-meta">
@@ -274,15 +266,24 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-04-07 17:36:29" itemprop="dateCreated datePublished" datetime="2020-04-07T17:36:29+08:00">2020-04-07</time>
+              <time title="创建时间：2020-04-12 14:26:16" itemprop="dateCreated datePublished" datetime="2020-04-12T14:26:16+08:00">2020-04-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-12 14:34:17" itemprop="dateModified" datetime="2020-04-12T14:34:17+08:00">2020-04-12</time>
+                <time title="修改时间：2020-04-20 11:36:34" itemprop="dateModified" datetime="2020-04-20T11:36:34+08:00">2020-04-20</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/My-Baby/" itemprop="url" rel="index"><span itemprop="name">My Baby</span></a>
+                </span>
+            </span>
 
           
 
@@ -295,7 +296,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+          <h3 id="爱你"><a href="#爱你" class="headerlink" title="爱你"></a>爱你</h3><hr>
+<p><img src="/images/01.jpg" alt="小宝贝"></p>
 
       
     </div>
@@ -369,16 +371,15 @@
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="圣达什"
+    <img class="site-author-image" itemprop="image" alt="圣大什"
       src="/images/26.jpg">
-  <p class="site-author-name" itemprop="name">圣达什</p>
+  <p class="site-author-name" itemprop="name">圣大什</p>
   <div class="site-description" itemprop="description"></div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
+          <a href="/archives">
           <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
@@ -386,7 +387,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -403,6 +404,12 @@
         <a href="mailto:1126197308@qq.com" title="E-Mail → mailto:1126197308@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
+        <a href="qqto:1126197308@qq.com" title="QQ → qqto:1126197308@qq.com" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/s1126197308" title="WeiChat → s1126197308"><i class="fab fa-weixin fa-fw"></i>WeiChat</a>
+      </span>
+      <span class="links-of-author-item">
         <a href="https://weibo.com/2698486542" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;2698486542" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
       </span>
   </div>
@@ -414,10 +421,7 @@
     </div>
     <ul class="links-of-blogroll-list">
         <li class="links-of-blogroll-item">
-          <a href="http://github.com/shengdashi" title="http:&#x2F;&#x2F;github.com&#x2F;shengdashi" rel="noopener" target="_blank">盛</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://weibo.com/u/7299390289?from=feed&loc=at&nick=%E4%B8%80%E5%8F%AA%E5%B0%8F%E6%80%82%E9%BC%A0cyl&is_all=1" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;7299390289?from&#x3D;feed&amp;loc&#x3D;at&amp;nick&#x3D;%E4%B8%80%E5%8F%AA%E5%B0%8F%E6%80%82%E9%BC%A0cyl&amp;is_all&#x3D;1" rel="noopener" target="_blank">怂</a>
+          <a href="https://weibo.com/u/7299390289?from=feed&loc=at&nick=%E4%B8%80%E5%8F%AA%E5%B0%8F%E6%80%82%E9%BC%A0cyl&is_all=1" title="https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;7299390289?from&#x3D;feed&amp;loc&#x3D;at&amp;nick&#x3D;%E4%B8%80%E5%8F%AA%E5%B0%8F%E6%80%82%E9%BC%A0cyl&amp;is_all&#x3D;1" rel="noopener" target="_blank">怂怂</a>
         </li>
         <li class="links-of-blogroll-item">
           <a href="https://hexo.io/" title="https:&#x2F;&#x2F;hexo.io&#x2F;" rel="noopener" target="_blank">Hexo</a>
@@ -448,12 +452,32 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">圣达什</span>
+  <span class="author" itemprop="copyrightHolder">圣大什</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
 
 
 
@@ -485,6 +509,15 @@
 
 
   
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
 
 
 
